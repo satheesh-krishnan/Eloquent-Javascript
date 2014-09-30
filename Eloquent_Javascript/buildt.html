@@ -1,0 +1,51 @@
+<html>
+<head>
+</head>
+<body>
+<style>
+  /* Defines a cleaner look for tables */
+  table  { border-collapse: collapse; }
+  td, th { border: 1px solid black; padding: 3px 8px; }
+  th     { text-align: left; }
+</style>
+<script>
+  
+  function buildTable(data) {
+    var tab=document.createElement('table')
+    var ro=document.createElement('tr')
+    var nam=document.createElement('th')
+    var het=document.createElement('th')
+    var con=document.createElement('th')
+    nam.appendChild(document.createTextNode('NAME'))
+    het.appendChild(document.createTextNode('HEIGHT'))
+    con.appendChild(document.createTextNode('PLACE'))
+    ro.appendChild(nam)
+    ro.appendChild(het)
+    ro.appendChild(con)
+    tab.appendChild(ro)
+    document.body.appendChild(tab)
+    real=Object.keys(data)
+    alert(real)  
+    real.forEach(function(mon){
+    alert("here")
+    ro=document.createElement('tr')
+    nam=document.createElement('td')
+    het=document.createElement('td')
+    het.style.textAlign="right"
+    con=document.createElement('td')
+    nam.appendChild(document.createTextNode(data[mon][0]))
+    het.appendChild(document.createTextNode(data[mon][1]))
+    con.appendChild(document.createTextNode(data[mon][2]))
+    ro.appendChild(nam)
+    ro.appendChild(het)
+    ro.appendChild(con)
+    tab.appendChild(ro)
+    })
+    return tab
+    
+  }
+  var MOUNTAINS={one:["KILI",5432,"TANZ"],two:["EVE",8746,"NEP"]}
+  document.body.appendChild(buildTable(MOUNTAINS))
+</script>
+</body>
+</html>

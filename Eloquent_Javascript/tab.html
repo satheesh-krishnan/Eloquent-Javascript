@@ -1,0 +1,25 @@
+<div id="wrapper">
+  <div data-tabname="one">Tab one</div>
+  <div data-tabname="two">Tab two</div>
+  <div data-tabname="three">Tab three</div>
+</div>
+<script>
+  function asTabs(node) {
+    alert(node)
+    var chi=node.getElementsByTagName('div')
+    alert(chi.length)
+    for(ch=0;ch<chi.length;ch++){
+    alert(ch)
+    var a= chi[ch].getAttribute("data-tabname")
+    alert(a)
+    var div=document.createElement('button')
+    alert(div)
+    div.innerHTML=a
+    node.appendChild(div)
+   }
+   document.addEventListener("click",function(event){
+   alert(event.target.textContent)
+   })
+  }
+  asTabs(document.querySelector("#wrapper"));
+</script>

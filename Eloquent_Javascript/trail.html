@@ -1,0 +1,35 @@
+<style>
+  .trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 3px;
+    background: teal;
+  }
+  body {
+    height: 300px;
+  }
+
+</style>
+
+<script>
+  var imgs=new Array()
+  imgs.push("sci.jpg")
+  imgs.push("si.jpg")
+  a=100
+  b=0
+  alert("hi")
+  addEventListener('mousemove',function(event){
+  x=event.pageX
+  y=event.pageY
+//  alert(x)
+  if (x<a){
+     var div=document.createElement('div')
+     div.className='trail'
+     div.innerHTML='<img src='+imgs[b]+' >'
+     document.body.appendChild(div)}
+  if (x>a){
+      
+      a=a+100
+      b=b+1}})      
+</script>
+

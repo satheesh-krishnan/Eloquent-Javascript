@@ -1,0 +1,25 @@
+<p style="text-align:center">
+<img src="sci.jpg" id="cat" style="position: absolute">
+<img src="si.jpg" id="hat" style="position: absolute">
+</p>
+<script>
+  var cat = document.querySelector("#cat");
+  
+  var hat = document.querySelector("#hat")
+  
+  a=0
+  lt=null
+  function animate(time){
+   if(lt!=null)
+      a+=(time-lt)*0.001
+   lt=time
+   
+   hat.style.top=(Math.sin(a)*225)+220+"px"
+   hat.style.left=(Math.cos(a)*225)+370+"px"
+   cat.style.top=(Math.sin(a)*20)+160+"px"
+   cat.style.left=(Math.cos(a)*20)+370+"px"
+   requestAnimationFrame(animate)
+   }
+   requestAnimationFrame(animate)
+  
+</script>
